@@ -60,25 +60,6 @@ O AWS X-Ray traz diversos benefícios para os desenvolvedores e operadores de ap
 
 - Integração com outras ferramentas AWS: O X-Ray pode ser facilmente integrado com outras ferramentas e serviços AWS, como o AWS Lambda, o Amazon EC2, o Amazon ECS e o Amazon API Gateway. Isso ajuda a criar uma visão completa e integrada da aplicação distribuída e a simplificar a operação e a gestão da infraestrutura.
 
-## Histórico de mudanças
-
-- 0.1.0
-  - Primeira versão da aplicação
-
-## Sobre o criador
-
-Gustavo Mainchein – [@gugamainchein](https://www.instagram.com/gugamainchein) – gustavomainchein@outlook.com
-
-[Veja mais sobre mim](https://github.com/gugamainchein)
-
-## Faça sua contribuição
-
-1. Realize o fork do projeto (<https://github.com/gugamainchein/cognito-casl/fork>)
-2. Crie a nova feature em uma branch (`git checkout -b feature/fooBar`)
-3. Faça o commit das suas mudanças (`git commit -am 'Add some fooBar'`)
-4. Realize o push para a branch (`git push origin feature/fooBar`)
-5. Crie um novo pull request
-
 ## Faça você mesmo
 
 Para configurar o ambiente local, utilizaremos o container do daemon do X-Ray, para fins de padronização das configurações.
@@ -107,3 +88,22 @@ Para certificar-se de que está tudo certo, você deve visualizar ter um resulta
 <img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/result-1.png?raw=true" alt="X-Ray Final Result 1" width="100%"/>
 
 <img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/result-2.png?raw=true" alt="X-Ray Final Result 2" width="100%"/>
+
+## Histórico de mudanças
+
+- 0.1.0
+  - Primeira versão da aplicação
+
+## Sobre o criador
+
+Gustavo Mainchein – [@gugamainchein](https://www.instagram.com/gugamainchein) – gustavomainchein@outlook.com
+
+[Veja mais sobre mim](https://github.com/gugamainchein)
+
+## Faça sua contribuição
+
+1. Realize o fork do projeto (<https://github.com/gugamainchein/cognito-casl/fork>)
+2. Crie a nova feature em uma branch (`git checkout -b feature/fooBar`)
+3. Faça o commit das suas mudanças (`git commit -am 'Add some fooBar'`)
+4. Realize o push para a branch (`git push origin feature/fooBar`)
+5. Crie um novo pull request
