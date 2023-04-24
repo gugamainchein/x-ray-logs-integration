@@ -1,4 +1,6 @@
-﻿# O que é o X-Ray?
+﻿# X-Ray: Monitorando Aplicações de Forma Inteligente
+
+## O que é o X-Ray?
 
 O X-Ray da AWS é um serviço de análise e depuração de aplicações que ajuda desenvolvedores a entender o comportamento de suas aplicações distribuídas, identificando problemas de performance e solucionando erros mais rapidamente.
 
@@ -10,7 +12,7 @@ O X-Ray é fácil de integrar com outras ferramentas da AWS, como o Amazon Cloud
 
 Em resumo, o serviço da AWS é uma ferramenta poderosa para analisar e depurar aplicações distribuídas, que ajuda desenvolvedores a identificar problemas de performance e erros de forma mais rápida e eficiente, melhorando a experiência do usuário final.
 
-# Funcionamento do X-Ray
+## Funcionamento do X-Ray
 
 O funcionamento do X-Ray envolve a instrumentação da aplicação, onde o desenvolvedor adiciona código aos componentes da aplicação para gerar dados de rastreamento. Esses dados são enviados para o serviço, onde são agregados e apresentados em uma interface web.
 
@@ -34,7 +36,7 @@ A seguir, descrevo com mais detalhes as etapas envolvidas no funcionamento do X-
 
 <img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-2.png?raw=true" alt="X-Ray Image 2" width="100%"/>
 
-# Precificação da ferramenta
+## Precificação da ferramenta
 
 O modelo de precificação do X-Ray é baseado no número de solicitações de rastreamento que sua aplicação gera. A AWS cobra uma taxa por solicitação de rastreamento, que inclui a coleta, armazenamento e análise dos dados de rastreamento. O preço varia de acordo com a região da AWS em que sua aplicação está sendo executada e do volume de solicitações de rastreamento.
 
@@ -44,7 +46,7 @@ Além disso, a AWS oferece um desconto de volume para clientes que geram mais de
 
 É importante notar que o X-Ray também cobra uma taxa para armazenamento de dados de rastreamento. O armazenamento é cobrado em incrementos de GB por mês e varia dependendo da região da AWS em que a aplicação está sendo executada.
 
-# Quais as vantagens do X-Ray
+## Quais as vantagens do X-Ray
 
 O AWS X-Ray traz diversos benefícios para os desenvolvedores e operadores de aplicações distribuídas, entre eles:
 
@@ -58,7 +60,26 @@ O AWS X-Ray traz diversos benefícios para os desenvolvedores e operadores de ap
 
 - Integração com outras ferramentas AWS: O X-Ray pode ser facilmente integrado com outras ferramentas e serviços AWS, como o AWS Lambda, o Amazon EC2, o Amazon ECS e o Amazon API Gateway. Isso ajuda a criar uma visão completa e integrada da aplicação distribuída e a simplificar a operação e a gestão da infraestrutura.
 
-# Configurando o X-Ray localmente
+## Histórico de mudanças
+
+- 0.1.0
+  - Primeira versão da aplicação
+
+## Sobre o criador
+
+Gustavo Mainchein – [@gugamainchein](https://www.instagram.com/gugamainchein) – gustavomainchein@outlook.com
+
+[Veja mais sobre mim](https://github.com/gugamainchein)
+
+## Faça sua contribuição
+
+1. Realize o fork do projeto (<https://github.com/gugamainchein/cognito-casl/fork>)
+2. Crie a nova feature em uma branch (`git checkout -b feature/fooBar`)
+3. Faça o commit das suas mudanças (`git commit -am 'Add some fooBar'`)
+4. Realize o push para a branch (`git push origin feature/fooBar`)
+5. Crie um novo pull request
+
+## Faça você mesmo
 
 Para configurar o ambiente local, utilizaremos o container do daemon do X-Ray, para fins de padronização das configurações.
 
@@ -66,36 +87,22 @@ Pensando nisso, é fundamental que você já possua o [Docker](https://www.docke
 
 1. Inicie o Docker em sua máquina abrindo o aplicativo
 2. Abra seu terminal de comando
-3. Execute o comando: _“docker pull amazon/aws-xray-daemon”_
-4. Crie o arquivo _“xray.env”_ contendo as seguintes variáveis preenchidas:
+3. Execute o comando: `docker pull amazon/aws-xray-daemon`
+4. Realize o clone do projeto `git clone https://github.com/gugamainchein/x-ray-logs-integration.git`
+5. Crie seu próprio arquivo `container/xray.env` contendo as seguintes variáveis preenchidas:
    a. AWS_ACCESS_KEY_ID={access_key_var}
    b. AWS_SECRET_ACCESS_KEY={secret_key_var}
    c. AWS_REGION={region_var}
-5. Execute o container por meio do comando _“docker run --env-file xray.env -p 2000:2000/udp amazon/aws-xray-daemon”_
+6. Execute o container por meio do comando `docker run --env-file ./container/xray.env -p 2000:2000/udp amazon/aws-xray-daemon`
+7. Abra um novo terminal, sem fechar o que está executando o container do Docker
+8. Instale as depedências `npm i`
+9. Execute o projeto `npm run start`
 
 Após executar os passos acima, seu ambiente local está pronto para enviar logs ao X-Ray da sua conta AWS, sendo exibidos todos os logs e traces processadas na aplicação local.
 
 Para certificar-se de que está tudo certo, você deve visualizar ter um resultado semelhante à este:
 
 <img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-daemon-container.png?raw=true" alt="X-Ray Daemon Container" width="100%"/>
-
-# Criando uma aplicação e integrando-a com X-Ray
-
-Para fins de demonstração, iremos trabalhar com uma aplicação Node.js, na estrutura Express.js. Portanto é de suma importância que você realize a instalação das ferramentas por meio do tutorial abaixo:
-
-1. Acesse: <https://nodejs.org/en>
-2. Faça o download da versão estável do Node.js (LTS)
-3. Siga todos os passos seguintes que forem indicados no terminal ou box de instalação
-4. Crie uma pasta com o nome personalizado do seu projeto, como por exemplo _“x-ray-labs”_
-5. Entre na pasta e abra o terminal de comando
-6. Execute o comando de criação de projetos Node.js _“npm init -y”_
-7. Realize a instalação de pacotes fundamentais para o projeto _“npm i –save @aws-sdk/client-dynamodb express http aws-xray-sdk @aws-sdk/core uuid”_
-8. Crie o arquivo _“index.js”_ para iniciar a configuração de sua aplicação
-9. Insira o seguinte código, substituindo o nome da sua aplicação _“x-ray-lab”_
-10. Execute a aplicação por meio do comando “node index.js” e abra o navegador na URL <http://localhost:8080>
-11. Abra o painel do X-Ray, recarregue os gráficos e as Traces, pois já será possível visualizar a integração funcionando normalmente, assim como os detalhes dos logs processados localmente.
-
-O resultado final esperado é algo semelhante ao exemplo representado abaixo:
 
 <img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/result-1.png?raw=true" alt="X-Ray Final Result 1" width="100%"/>
 
