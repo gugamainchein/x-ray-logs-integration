@@ -71,9 +71,9 @@ Pensando nisso, é fundamental que você já possua o [Docker](https://www.docke
 3. Execute o comando: `docker pull amazon/aws-xray-daemon`
 4. Realize o clone do projeto `git clone https://github.com/gugamainchein/x-ray-logs-integration.git`
 5. Crie seu próprio arquivo `container/xray.env` contendo as seguintes variáveis preenchidas:
-   a. AWS_ACCESS_KEY_ID={access_key_var}
-   b. AWS_SECRET_ACCESS_KEY={secret_key_var}
-   c. AWS_REGION={region_var}
+   - AWS_ACCESS_KEY_ID={access_key_var}
+   - AWS_SECRET_ACCESS_KEY={secret_key_var}
+   - AWS_REGION={region_var}
 6. Execute o container por meio do comando `docker run --env-file ./container/xray.env -p 2000:2000/udp amazon/aws-xray-daemon`
 7. Abra um novo terminal, sem fechar o que está executando o container do Docker
 8. Instale as depedências `npm i`
