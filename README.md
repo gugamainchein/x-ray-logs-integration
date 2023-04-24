@@ -30,9 +30,9 @@ A seguir, descrevo com mais detalhes as etapas envolvidas no funcionamento do X-
 
 7. A ferramenta pode ser integrado com várias outras ferramentas e serviços de terceiros, como o Datadog, para oferecer ainda mais recursos de análise e depuração para aplicativos em nuvem.
 
-![X-Ray Image 1](https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-1.png?raw=true)
+<img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-1.png?raw=true" alt="X-Ray Image 1" width="100%"/>
 
-![X-Ray Image 2](https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-2.png?raw=true)
+<img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-2.png?raw=true" alt="X-Ray Image 2" width="100%"/>
 
 # Precificação da ferramenta
 
@@ -77,7 +77,7 @@ Após executar os passos acima, seu ambiente local está pronto para enviar logs
 
 Para certificar-se de que está tudo certo, você deve visualizar ter um resultado semelhante à este:
 
-![X-Ray Daemon Container](https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-daemon-container.png?raw=true)
+<img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/x-ray-daemon-container.png?raw=true" alt="X-Ray Daemon Container" width="100%"/>
 
 # Criando uma aplicação e integrando-a com X-Ray
 
@@ -97,6 +97,6 @@ Para fins de demonstração, iremos trabalhar com uma aplicação Node.js, na es
 
 O resultado final esperado é algo semelhante ao exemplo representado abaixo:
 
-![X-Ray Final Result 1](https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/result-1.png?raw=true)
+<img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/result-1.png?raw=true" alt="X-Ray Final Result 1" width="100%"/>
 
-![X-Ray Final Result 2](https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/result-2.png?raw=true)
+<img src="https://github.com/gugamainchein/x-ray-logs-integration/blob/master/docs/result-2.png?raw=true" alt="X-Ray Final Result 2" width="100%"/>
